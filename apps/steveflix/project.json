@@ -1,0 +1,8 @@
+{
+  "name": "steveflix",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/steveflix/src",
+  "projectType": "application",
+  "targets": {},
+  "tags": []
+}
