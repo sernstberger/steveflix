@@ -1,16 +1,10 @@
-import styled from '@emotion/styled';
-
-import NxWelcome from './nx-welcome';
-
-const StyledApp = styled.div`
-  // Your style here
-`;
+import { Card } from '@mui/joy';
 
 export function App() {
   return (
-    <StyledApp>
-      <NxWelcome title="steveflix" />
-    </StyledApp>
+    <div>
+      <Card>asjdlf</Card>
+    </div>
   );
 }
 
