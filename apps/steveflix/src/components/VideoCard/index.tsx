@@ -1,36 +1,31 @@
 import * as React from 'react';
-import Box from '@mui/joy/Box';
-import Card from '@mui/joy/Card';
-import CardCover from '@mui/joy/CardCover';
-import CardContent from '@mui/joy/CardContent';
-import Typography from '@mui/joy/Typography';
+import { AspectRatio, Link } from '@mui/joy';
+import VideoModal from '../VideoModal';
 
 export default function VideoCard() {
+  const [open, setOpen] = React.useState<boolean>(false);
   return (
-    <Box
-      component="ul"
-      sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', p: 0, m: 0 }}
-    >
-      <Card component="li" sx={{ minWidth: 300, flexGrow: 1 }}>
-        <CardCover>
+    <React.Fragment>
+      <Link
+        href="#dribbble-shot"
+        aria-label="Play MovieName"
+        onClick={() => setOpen(true)}
+      >
+        <AspectRatio
+          ratio="16/9"
+          sx={{ minWidth: 300 }}
+          onClick={() => setOpen(true)}
+        >
           <img
             src="https://images.unsplash.com/photo-1502657877623-f66bf489d236?auto=format&fit=crop&w=800"
             srcSet="https://images.unsplash.com/photo-1502657877623-f66bf489d236?auto=format&fit=crop&w=800&dpr=2 2x"
             loading="lazy"
             alt=""
           />
-        </CardCover>
-        <CardContent>
-          <Typography
-            level="body-lg"
-            fontWeight="lg"
-            textColor="#fff"
-            mt={{ xs: 12, sm: 18 }}
-          >
-            Image
-          </Typography>
-        </CardContent>
-      </Card>
-    </Box>
+        </AspectRatio>
+      </Link>
+
+      <VideoModal {...{ open, setOpen }} />
+    </React.Fragment>
   );
 }
