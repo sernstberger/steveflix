@@ -13,9 +13,9 @@ export function App() {
           element={
             <div>
               <Billboard />
-              <VideoCardRow />
-              <VideoCardRow />
-              <VideoCardRow />
+              <VideoCardRow title="Trending Movies" />
+              <VideoCardRow title="Trending Movies" />
+              <VideoCardRow title="Trending Movies" />
             </div>
           }
         />

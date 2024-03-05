@@ -2,16 +2,20 @@ import { useGetTrendingQuery } from '../../redux/listApi';
 import VideoCard from '../VideoCard';
 import { Stack, Typography } from '@mui/joy';
 
-export default function VideoCardRow() {
-  const { data: movies, isLoading } = useGetTrendingQuery(123);
+interface VideoCardRowProps {
+  title: string;
+}
+
+export default function VideoCardRow({ title }: VideoCardRowProps) {
+  const { data, isLoading } = useGetTrendingQuery(123);
 
   if (isLoading) return 'Loading...';
 
-  console.log(movies);
+  // console.log(data.results);
 
   return (
     <div>
-      <Typography level="title-lg">Title goes here</Typography>
+      <Typography level="title-lg">{title}</Typography>
       <Stack
         direction="row"
         sx={{
@@ -21,13 +25,9 @@ export default function VideoCardRow() {
           overflowX: 'auto', // remove if using a carousel effect instead of scroll
         }}
       >
-        <VideoCard />
-        <VideoCard />
-        <VideoCard />
-        <VideoCard />
-        <VideoCard />
-        <VideoCard />
-        <VideoCard />
+        {data.results.map((movie: any) => (
+          <VideoCard key={movie.id} movie={movie} />
+        ))}
       </Stack>
     </div>
   );

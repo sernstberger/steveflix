@@ -1,14 +1,14 @@
 import { AspectRatio, Link } from '@mui/joy';
 
-export default function VideoCard() {
+export default function VideoCard({ movie }: any) {
+  console.log(movie.id, movie.poster_path);
   return (
-    <Link href="123/preview" aria-label="Play MovieName">
-      <AspectRatio ratio="16/9" sx={{ minWidth: 300 }}>
+    <Link href={`${movie.id}/preview`} aria-label="Play MovieName">
+      <AspectRatio ratio="2/3" sx={{ minWidth: 200 }}>
         <img
-          src="https://images.unsplash.com/photo-1502657877623-f66bf489d236?auto=format&fit=crop&w=800"
-          srcSet="https://images.unsplash.com/photo-1502657877623-f66bf489d236?auto=format&fit=crop&w=800&dpr=2 2x"
+          src={`https://media.themoviedb.org/t/p/w300_and_h450_bestv2/${movie.poster_path}`}
           loading="lazy"
-          alt=""
+          alt={movie.title}
         />
       </AspectRatio>
     </Link>
