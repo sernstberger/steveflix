@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Billboard } from '../components/Billboard';
 import VideoCardRow from '../components/VideoCardRow';
 import VideoPlayer from '../components/VideoPlayer';
+import VideoPreview from '../components/VideoPreview';
 
 export function App() {
   return (
@@ -19,7 +20,7 @@ export function App() {
           }
         />
         <Route path=":id">
-          <Route path="preview" element={<div>Preview</div>} />
+          <Route path="preview" element={<VideoPreview />} />
           <Route path="playing" element={<VideoPlayer />} />
         </Route>
       </Routes>
