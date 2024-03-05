@@ -18,8 +18,10 @@ export function App() {
             </div>
           }
         />
-        <Route path="/preview/:id" element={<div>Preview Modal</div>} />
-        <Route path="/play/:id" element={<VideoPlayer />} />
+        <Route path=":id">
+          <Route path="preview" element={<div>Preview</div>} />
+          <Route path="playing" element={<VideoPlayer />} />
+        </Route>
       </Routes>
     </Router>
   );
