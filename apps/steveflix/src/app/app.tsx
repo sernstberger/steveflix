@@ -13,9 +13,10 @@ export function App() {
           element={
             <div>
               <Billboard />
-              <VideoCardRow title="Trending Movies" />
-              <VideoCardRow title="Trending Movies" />
-              <VideoCardRow title="Trending Movies" />
+              <VideoCardRow title="Popular Movies" listType="popular" />
+              <VideoCardRow title="Now Playing Movies" listType="now_playing" />
+              <VideoCardRow title="Top Rated Movies" listType="top_rated" />
+              <VideoCardRow title="Upcoming Movies" listType="upcoming" />
             </div>
           }
         />

@@ -1,13 +1,14 @@
-import { useGetTrendingQuery } from '../../redux/listApi';
+import { useGetListQuery } from '../../redux/listApi';
 import VideoCard from '../VideoCard';
 import { Stack, Typography } from '@mui/joy';
 
 interface VideoCardRowProps {
   title: string;
+  listType: 'popular' | 'top_rated' | 'now_playing' | 'upcoming';
 }
 
-export default function VideoCardRow({ title }: VideoCardRowProps) {
-  const { data, isLoading } = useGetTrendingQuery(123);
+export default function VideoCardRow({ title, listType }: VideoCardRowProps) {
+  const { data, isLoading } = useGetListQuery(listType);
 
   if (isLoading) return 'Loading...';
 
