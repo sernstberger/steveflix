@@ -9,7 +9,26 @@ import CssBaseline from '@mui/joy/CssBaseline';
 import App from './app/app';
 import { store } from './redux/store'; // import the store
 
-const theme = extendTheme();
+const theme = extendTheme({
+  colorSchemes: {
+    dark: {
+      palette: {
+        primary: {
+          '50': '#fce6e8',
+          '100': '#faced0',
+          '200': '#f59da1',
+          '300': '#ef6b72',
+          '400': '#ea3a43',
+          '500': '#E50914',
+          '600': '#b70710',
+          '700': '#89050c',
+          '800': '#5c0408',
+          '900': '#2e0204',
+        },
+      },
+    },
+  },
+});
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
